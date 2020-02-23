@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gg.intentfilterdialer">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".BeerActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="application/ogg" />
+                <data android:mimeType="application/x-ogg" />
+                <data android:mimeType="application/itunes" />
+
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="content" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="application/ogg" />
+                <data android:mimeType="application/x-ogg" />
+                <data android:mimeType="application/itunes" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="vnd.android.cursor.dir/audio" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.DIAL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tel" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AboutActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <!-- when using implicit intents category is to be set as default -->
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+
+<!--        catrobat activity-->
+        <activity android:name=".CatrobatActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW"/>-->
+<!--                <category android:name="android.intent.category.DEFAULT"/>-->
+<!--                <category android:name="android.intent.category.BROWSABLE"/>-->
+<!--                <data android:scheme="file"/>-->
+<!--                <data android:mimeType="application/*"/>-->
+<!--                <data android:pathPattern=".*\\.catrobat"/>-->
+<!--                <data android:host="*"/>-->
+<!--            </intent-filter>-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+<!--                <data-->
+<!--                    android:scheme="file"-->
+<!--                    android:mimeType="*/*"-->
+<!--                    android:host="*"-->
+<!--                    android:pathPattern=".*\\.catrobat" />-->
+<!--            </intent-filter>-->
+
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+<!--                <data-->
+<!--                    android:mimeType="application/zip"-->
+<!--                    android:host="*"-->
+<!--                    android:scheme="content"-->
+<!--                    android:pathPattern=".*\\.catrobat" />-->
+<!--            </intent-filter>-->
+
+            <intent-filter
+                android:icon="@mipmap/ic_launcher"
+                android:label="Armro File"
+                android:priority="1" >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:host="*" />
+                <data android:mimeType="*/*" />
+                <data android:pathPattern="/.*\\.catrobat" />
+            </intent-filter>
+
+<!--            <intent-filter >-->
+<!--                <action android:name="android.intent.action.SEND" />-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE"/>-->
+<!--                <data android:scheme="content"/>-->
+<!--                <data android:mimeType="application/zip" />-->
+<!--                <data android:host="*" />-->
+<!--            </intent-filter>-->
+
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <data android:scheme="content" />-->
+<!--                <data android:mimeType="application/*"/>-->
+<!--                <data android:pathPattern=".*\\.catrobat"/>-->
+<!--                <data android:host="*"/>-->
+<!--            </intent-filter>-->
+
+        </activity>
+    </application>
+
+</manifest>

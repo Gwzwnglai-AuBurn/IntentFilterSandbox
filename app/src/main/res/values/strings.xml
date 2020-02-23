@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">IntentFilterDialer</string>
+    <string name="intent_filter_demo">Intent Filter</string>
+</resources>
