@@ -1,6 +1,6 @@
 # Read me
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+[![N|Solid](https://www.eclipse.org/community/eclipse_newsletter/2016/july/images/gradle-mechaphant.png)](https://nodesource.com/products/nsolid)
 
 This project to play around with Intent Filter to find desired behaviour in an app.
 
